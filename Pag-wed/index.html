@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio | Estructuras de HTML5</title>
+    <style>
+    :root {
+        --primary-color: #0630af;
+        --secondary-color: #264de4;
+        --dark-color: #2c3e50;
+        --light-color: #f8f9fa;
+        --accent-color: #333333;
+    }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        background-color: #f0f2f5;
+        color: var(--accent-color);
+    }
+
+    /* Encabezado */
+    header {
+        background: linear-gradient(135deg, var(--primary-color), #2ae649);
+        color: rgb(239, 239, 239);
+        padding: 2rem 1rem;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    /* Barra de Navegación */
+    nav {
+        background-color: var(--dark-color);
+        color: white;
+        padding: 1rem;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+    nav ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+        color: #2ae649;
+    }
+
+    /* Contenedor Principal */
+    .container {
+        max-width: 1100px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 2rem;
+        flex: 1;
+        width: 100%;
+    }
+
+    main {
+        background: white;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    section {
+        margin-bottom: 2.5rem;
+    }
+
+    section h2 {
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+        border-bottom: 2px solid var(--light-color);
+        padding-bottom: 0.5rem;
+    }
+
+    article {
+        margin-bottom: 1.5rem;
+        padding-bottom: 1.5rem;
+        border-bottom: 1px dashed #c71717;
+    }
+
+    article:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    /* Estilos para las nuevas etiquetas */
+    figure {
+        margin: 1rem 0;
+        padding: 0.5rem;
+        background: var(--light-color);
+        border-radius: 6px;
+        text-align: center;
+    }
+
+    figure img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 4px;
+    }
+
+    figcaption {
+        font-size: 0.9rem;
+        color: #666;
+        margin-top: 0.5rem;
+        font-style: italic;
+    }
+
+    details {
+        background: var(--light-color);
+        padding: 0.85rem;
+        border-radius: 6px;
+        margin-top: 1rem;
+        cursor: pointer;
+        border: 1px solid #ddd;
+    }
+
+    summary {
+        font-weight: 600;
+        color: var(--primary-color);
+    }
+
+    details p {
+        margin-top: 0.5rem;
+        color: #444;
+    }
+
+    time {
+        font-size: 0.85rem;
+        color: #777;
+        display: block;
+        margin-bottom: 0.5rem;
+    }
+
+    /* Barra Lateral (Aside) */
+    aside {
+        background: rgb(29, 210, 238);
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        height: fit-content;
+    }
+
+    aside h3 {
+        color: var(--dark-color);
+        margin-bottom: 1rem;
+    }
+
+    aside ul {
+        list-style-type: square;
+        padding-left: 1.5rem;
+    }
+
+    aside li {
+        margin-bottom: 0.5rem;
+    }
+
+    /* Pie de Página */
+    footer {
+        background-color: var(--dark-color);
+        color: white;
+        text-align: center;
+        padding: 1.5rem;
+        margin-top: auto;
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Portafolio HTML5</h1>
+        <p>Explorando el poder de la estructura semántica moderna</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#etiquetas">Etiquetas Clave</a></li>
+            <li><a href="#multimedia">Multimedia & Avanzadas</a></li>
+            <li><a href="#ventajas">Ventajas</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        
+        <main>
+            <section id="inicio">
+                <h2>¿Qué es la Estructura HTML5?</h2>
+                <p>HTML5 introdujo etiquetas semánticas avanzadas que permiten definir claramente las distintas partes de una página web tanto para los navegadores como para los desarrolladores.</p>
+            </section>
+
+            <section id="etiquetas">
+                <h2>Etiquetas Clave de HTML5</h2>
+                
+                <article>
+                    <h3>&lt;header&gt;</h3>
+                    <p>Representa un contenedor de contenido introductorio o un grupo de enlaces de navegación. Suele incluir el logotipo y el título principal.</p>
+                </article>
+
+                <article>
+                    <h3>&lt;nav&gt;</h3>
+                    <p>Sección de una página cuyo propósito es proporcionar enlaces de navegación, ya sea dentro del sitio actual o hacia otros documentos.</p>
+                </article>
+
+                <article>
+                    <h3>&lt;section&gt; y &lt;article&gt;</h3>
+                    <p><strong>Section</strong> define una sección temática en un documento. <strong>Article</strong> representa una composición autónoma que podría distribuirse de manera independiente (como un post de blog o noticia).</p>
+                </article>
+            </section>
+
+            <!-- NUEVAS ETIQUETAS Y EXTENSIONES AGREGADAS -->
+            <section id="multimedia">
+                <h2>Nuevas Extensiones Semánticas Avanzadas</h2>
+
+                <article>
+                    <h3>&lt;figure&gt; y &lt;figcaption&gt;</h3>
+                    <p>Utilizadas para asociar contenido visual (como imágenes, diagramas o códigos) con su respectiva leyenda o pie de nota de manera semántica.</p>
+                    <figure>
+                        <!-- Ejemplo visual genérico de marcador de posición -->
+                        <div style="background: #ddd; padding: 2rem; border-radius: 4px; color: #555;">[Contenedor Gráfico HTML5]</div>
+                        <figcaption>Figura 1: Ejemplo de integración de elementos gráficos mediante figure y figcaption.</figcaption>
+                    </figure>
+                </article>
+
+                <article>
+                    <h3>&lt;details&gt; y &lt;summary&gt;</h3>
+                    <p>Permiten crear un widget interactivo desplegable nativo sin necesidad de utilizar JavaScript para mostrar u ocultar información adicional.</p>
+                    <details>
+                        <summary>Haz clic para ver un dato curioso sobre HTML5</summary>
+                        <p>HTML5 fue lanzado oficialmente como recomendación W3C el 28 de octubre de 2014, reemplazando formalmente a HTML 4.01 que llevaba vigente desde 1999.</p>
+                    </details>
+                </article>
+
+                <article>
+                    <h3>&lt;time&gt;</h3>
+                    <p>Permite representar una fecha u hora específica de forma legible tanto para los usuarios como para los motores de búsqueda.</p>
+                    <time datetime="2026-09-02">Última actualización: 2 de Septiembre de 2026</time>
+                    <p>Las etiquetas de tiempo mejoran el SEO y la accesibilidad en blogs y portales de noticias.</p>
+                </article>
+            </section>
+        </main>
+
+        <aside>
+            <h3>Recursos Útiles</h3>
+            <ul>
+                <li>Documentación oficial (MDN)</li>
+                <li>Validador W3C</li>
+                <li>Guías de accesibilidad (WCAG)</li>
+                <li>Buenas prácticas CSS</li>
+            </ul>
+        </aside>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Portafolio Educativo HTML5. Diseñado con propósito semántico.</p>
+    </footer>
+
+</body>
+</html>
