@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio - Ing Roberto Vizcaino</title>
+    <style>
+        :root {
+            --bg-color: #1d3557;
+            --text-color: #f1faee;
+            --section-bg: #2b456e;
+            --accent-color: #457b9d;
+            --highlight-color: #a8dadc;
+            --proyecto-p: #e0fbfc;
+        }
+
+        body.light-mode {
+            --bg-color: #f8f9fa;
+            --text-color: #212529;
+            --section-bg: #ffffff;
+            --accent-color: #1d3557;
+            --highlight-color: #457b9d;
+            --proyecto-p: #495057;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px 0;
+            border-bottom: 2px solid var(--accent-color);
+        }
+
+        header h1 {
+            margin: 0;
+            color: var(--text-color);
+        }
+
+        header p {
+            color: var(--highlight-color);
+            font-size: 1.1rem;
+        }
+
+        .controls {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .btn {
+            background-color: var(--accent-color);
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            transition: background-color 0.2s, transform 0.1s;
+        }
+
+        .btn:hover {
+            background-color: var(--highlight-color);
+            color: #1d3557;
+            transform: scale(1.05);
+        }
+
+        section {
+            margin: 30px 0;
+            background: var(--section-bg);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            transition: background-color 0.3s;
+        }
+
+        h2 {
+            color: var(--accent-color);
+            border-bottom: 1px solid var(--bg-color);
+            padding-bottom: 5px;
+            margin-top: 0;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+            color: var(--text-color);
+        }
+
+        .proyecto {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.2s, transform 0.2s;
+        }
+
+        .proyecto:hover {
+            background-color: rgba(69, 123, 157, 0.15);
+            transform: translateX(5px);
+        }
+
+        .proyecto h3 {
+            margin: 0 0 5px 0;
+            color: var(--highlight-color);
+        }
+
+        .proyecto p {
+            color: var(--proyecto-p);
+        }
+
+        #mensaje-interactivo {
+            margin-top: 10px;
+            font-weight: bold;
+            color: var(--highlight-color);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: var(--highlight-color);
+            font-size: 0.9rem;
+        }
+
+        a {
+            color: var(--highlight-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: var(--text-color);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Roberto Vizcaino</h1>
+        <p>Estudiante de 5° Semestre de Ingeniería Informática</p>
+        <div class="controls">
+            <button class="btn" id="btn-saludo">Saludar</button>
+            <button class="btn" id="btn-tema">Cambiar Tema</button>
+        </div>
+        <p id="mensaje-interactivo"></p>
+    </header>
+
+    <section>
+        <h2>Presentación</h2>
+        <p>¡Hola! Soy estudiante de Ingeniería Informática en 5° semestre. Estoy comenzando mi camino en el desarrollo de software, aprendiendo nuevas tecnologías y construyendo mis primeros proyectos orientados a resolver problemas básicos con código.</p>
+    </section>
+
+    <section>
+        <h2>Lo que estoy aprendiendo</h2>
+        <ul>
+            <li><strong>Lenguajes:</strong> Python, HTML, C++</li>
+            <li><strong>Conceptos:</strong> Lógica de programación, Estructuras de datos básicas, Bases de datos relacionales</li>
+            <li><strong>Herramientas:</strong> Git, GitHub, VS Code</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Mis Primeros Proyectos</h2>
+
+        <div class="proyecto">
+            <h3>Prácticas con Estructuras de Datos</h3>
+            <p>Ejercicios enfocados en entender el funcionamiento de listas, pilas y colas.</p>
+        </div>
+
+        <div class="proyecto">
+            <h3>Mi Primera Página Web</h3>
+            <p>Este portafolio básico creado con HTML, CSS y JavaScript.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>Contacto: <a href="mailto:robertovizcaino341@gmail.com">robertovizcaino341@gmail.com</a> | <a href="https://github.com" target="_blank">GitHub</a></p>
+    </footer>
+
+    <script>
+        // Funcionalidad para el botón de saludo
+        const btnSaludo = document.getElementById('btn-saludo');
+        const mensajeInteractivo = document.getElementById('mensaje-interactivo');
+        
+        const saludos = [
+            "¡Qué gusto tenerte por aquí! 🚀",
+            "¡Gracias por visitar mi portafolio digital! 💻",
+            "¡Pronto verás más proyectos increíbles por aquí! ⚡",
+            "¡Bienvenido a mi espacio de código! ☕"
+        ];
+
+        btnSaludo.addEventListener('click', () => {
+            const randomIndex = Math.floor(Math.random() * saludos.length);
+            mensajeInteractivo.textContent = saludos[randomIndex];
+        });
+
+        // Funcionalidad para cambiar el tema (Oscuro / Claro)
+        const btnTema = document.getElementById('btn-tema');
+        
+        btnTema.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            
+            if (document.body.classList.contains('light-mode')) {
+                btnTema.textContent = "Modo Oscuro";
+            } else {
+                btnTema.textContent = "Cambiar Tema";
+            }
+        });
+    </script>
+
+</body>
+</html>
+
